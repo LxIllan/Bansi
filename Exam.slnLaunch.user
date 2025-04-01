@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "WebApplication\\WebApplication.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "WsApiexamen\\WsApiExamen.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
