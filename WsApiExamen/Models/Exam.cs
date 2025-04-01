@@ -7,6 +7,8 @@ namespace WsApiexamen.Models;
 public class Exam
 {
     [Column("idExamen")]
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
     [Column("Nombre")]
