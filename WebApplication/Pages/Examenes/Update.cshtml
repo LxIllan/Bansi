@@ -1,0 +1,19 @@
+@page "{id}"
+@model ExamenUpdateModel
+@{
+    ViewData["Title"] = "Actualizar Examen";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Nombre">Nombre</label>
+        <input type="text" id="Nombre" name="Nombre" class="form-control" value="@Model.examen.Nombre" required />
+    </div>
+    <div class="form-group">
+        <label for="Descripcion">Descripción</label>
+        <input type="text" id="Descripcion" name="Descripcion" class="form-control" value="@Model.examen.Descripcion" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>

@@ -1,0 +1,14 @@
+@page "{id}"
+@model ExamenDeleteModel
+@{
+    ViewData["Title"] = "Eliminar examen";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>Está seguro de eliminar el examen "@Model.examen.Nombre"?</h3>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="/Examenes/Index" class="btn btn-secondary">Cancelar</a>
+</form>

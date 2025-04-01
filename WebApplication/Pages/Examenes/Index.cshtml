@@ -1,0 +1,36 @@
+@page
+@model ExamenIndexModel
+@{
+    ViewData["Title"] = "Lista de ";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-primary" href="/Examenes/Create">Crear</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var exam in Model.examenes)
+        {
+            <tr>
+                <td>@exam.Id</td>
+                <td>@exam.Nombre</td>
+                <td>@exam.Descripcion</td>
+                <td>
+                    <a href="/Examenes/Update/@exam.Id" class="btn btn-warning">Atualizar</a>
+                    <a href="/Examenes/Delete/@exam.Id" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
