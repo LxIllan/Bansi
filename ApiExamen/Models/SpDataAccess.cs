@@ -68,7 +68,33 @@ public class SpDataAccess : IDataAccess
 
     public List<Examen> ConsultarExamen(int Id, string Nombre, string Descripcion)
     {
-        throw new NotImplementedException();
+        List<Examen> examens = new List<Examen>();
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
+        {
+            using (SqlCommand cmd = new SqlCommand("spConsultar", connection))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                // cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int) { Value = Id });
+                cmd.Parameters.Add(new SqlParameter("@Nombre", SqlDbType.VarChar) { Value = Nombre });
+                cmd.Parameters.Add(new SqlParameter("@Descripcion", SqlDbType.VarChar) { Value = Descripcion });
+
+                connection.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        examens.Add(new Examen
+                        {
+                            IdExamen = (int)reader["idExamen"],
+                            Nombre = (string)reader["Nombre"],
+                            Descripcion = (string)reader["Descripcion"]
+                        });
+                    }
+                }
+                connection.Close();
+            }
+        }
+        return examens;
     }
 
     public bool EliminarExamen(int Id)
