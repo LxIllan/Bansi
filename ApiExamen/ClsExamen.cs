@@ -16,16 +16,28 @@ public class ClsExamen
 
     public (bool, string) AgregarExamen(string Nombre, string Descripcion)
     {
+        if (string.IsNullOrEmpty(Nombre) && string.IsNullOrEmpty(Descripcion))
+        {
+            return (false, "Error, ambos parámetros no pueden ser nulos o vacíos.");
+        }
         return dataAccess.AgregarExamen(Nombre, Descripcion);
     }
 
     public bool ActualizarExamen(int Id, string Nombre, string Descripcion)
     {
+        if (string.IsNullOrEmpty(Nombre) && string.IsNullOrEmpty(Descripcion))
+        {
+            return false;
+        }
         return dataAccess.ActualizarExamen(Id, Nombre, Descripcion);
     }
 
     public bool EliminarExamen(int Id)
     {
+        if (Id < 1)
+        {
+            return false;
+        }
         return dataAccess.EliminarExamen(Id);
     }
 
@@ -36,6 +48,10 @@ public class ClsExamen
 
     public Examen getById(int Id)
     {
+        if (Id < 1)
+        {
+            return null;
+        }
         return dataAccess.getById(Id);
     }
 }
