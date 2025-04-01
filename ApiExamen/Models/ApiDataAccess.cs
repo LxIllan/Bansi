@@ -13,7 +13,7 @@ public class ApiDataAccess : IDataAccess
         httpClient = new HttpClient();
     }
 
-    public (bool, string) AgregarExamen(int Id, string Nombre, string Descripcion)
+    public (bool, string) AgregarExamen(string Nombre, string Descripcion)
     {
         string json = JsonSerializer.Serialize(new { Nombre, Descripcion });
         StringContent content = new StringContent(json, Encoding.UTF8, "application/json");

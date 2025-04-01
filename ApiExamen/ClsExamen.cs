@@ -14,9 +14,9 @@ public class ClsExamen
         dataAccess = DataAccessFactory.Create(useSp ? DataAccess.SP : DataAccess.Api);
     }
 
-    public (bool, string) AgregarExamen(int Id, string Nombre, string Descripcion)
+    public (bool, string) AgregarExamen(string Nombre, string Descripcion)
     {
-        return dataAccess.AgregarExamen(Id, Nombre, Descripcion);
+        return dataAccess.AgregarExamen(Nombre, Descripcion);
     }
 
     public bool ActualizarExamen(int Id, string Nombre, string Descripcion)

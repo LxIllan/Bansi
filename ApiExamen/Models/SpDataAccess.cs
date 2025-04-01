@@ -13,7 +13,7 @@ public class SpDataAccess : IDataAccess
         ConnectionString = @"Server=NADIA\SQLEXPRESS;Database=BdiExamen;Integrated Security=True;TrustServerCertificate=True;";
     }
 
-    public (bool, string) AgregarExamen(int Id, string Nombre, string Descripcion)
+    public (bool, string) AgregarExamen(string Nombre, string Descripcion)
     {
         bool isCreated = false;
         string message = "";
@@ -22,7 +22,6 @@ public class SpDataAccess : IDataAccess
             using (SqlCommand cmd = new SqlCommand("spAgregar", connection))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int) { Value = Id });
                 cmd.Parameters.Add(new SqlParameter("@Nombre", SqlDbType.VarChar) { Value = Nombre });
                 cmd.Parameters.Add(new SqlParameter("@Descripcion", SqlDbType.VarChar) { Value = Descripcion });
 
