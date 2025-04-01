@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "90319825-cda2-440b-9f80-a3de36394981",
+		"name": "Exam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18225211",
+		"_collection_link": "https://slim-team-24.postman.co/workspace/Slim-SYSSTECH~eea1c4ed-4148-46f1-ad38-25963762d7c7/collection/18225211-90319825-cda2-440b-9f80-a3de36394981?action=share&source=collection_link&creator=18225211"
+	},
+	"item": [
+		{
+			"name": "All",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5199/api/exam",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5199",
+					"path": [
+						"api",
+						"exam"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5199/api/exam/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5199",
+					"path": [
+						"api",
+						"exam",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nombre\" : \"Test Postman\",\r\n    \"Descripcion\" : \"Test created from Postman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5199/api/exam",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5199",
+					"path": [
+						"api",
+						"exam"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nombre\" : \"Test Postman:EDITED\",\r\n    \"Descripcion\" : \"Test created from Postman:EDITED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5199/api/exam/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5199",
+					"path": [
+						"api",
+						"exam",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5199/api/exam/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5199",
+					"path": [
+						"api",
+						"exam",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
