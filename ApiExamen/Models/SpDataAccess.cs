@@ -85,7 +85,7 @@ public class SpDataAccess : IDataAccess
                     {
                         examens.Add(new Examen
                         {
-                            IdExamen = (int)reader["idExamen"],
+                            Id = (int)reader["idExamen"],
                             Nombre = (string)reader["Nombre"],
                             Descripcion = (string)reader["Descripcion"]
                         });
