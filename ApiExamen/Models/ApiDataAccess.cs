@@ -13,7 +13,7 @@ public class ApiDataAccess : IDataAccess
         throw new NotImplementedException();
     }
 
-    public bool ConsultarExamen(int Id, string Nombre, string Descripcion)
+    public List<Examen> ConsultarExamen(int Id, string Nombre, string Descripcion)
     {
         throw new NotImplementedException();
     }

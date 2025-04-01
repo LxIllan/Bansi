@@ -1,6 +1,7 @@
 ﻿using ApiExamen.Factories;
 using ApiExamen.Interfaces;
 using ApiExamen.Enums;
+using ApiExamen.Models;
 
 namespace ApiExamen;
 
@@ -27,9 +28,10 @@ public class ClsExamen
     {
         return dataAccess.EliminarExamen(Id);
     }
-    public bool ConsultarExamen(int Id, string Nombre, string Descripcion)
+
+    public List<Examen> ConsultarExamen(int Id, string Nombre, string Descripcion)
     {
-        return dataAccess.ActualizarExamen(Id, Nombre, Descripcion);
+        return dataAccess.ConsultarExamen(Id, Nombre, Descripcion);
     }
 
     public void PrintInstance()

@@ -66,7 +66,7 @@ public class SpDataAccess : IDataAccess
         return isUpdated;
     }
 
-    public bool ConsultarExamen(int Id, string Nombre, string Descripcion)
+    public List<Examen> ConsultarExamen(int Id, string Nombre, string Descripcion)
     {
         throw new NotImplementedException();
     }
