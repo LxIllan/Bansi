@@ -120,9 +120,31 @@ public class SpDataAccess : IDataAccess
         }
         return isDeleted;
     }
-
-    public void printInstance()
+    public Examen getById(int Id)
     {
-        Console.WriteLine("SpDataAccess");
+        Examen examen = new Examen();
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
+        {
+            using (SqlCommand cmd = new SqlCommand("spConsultarPorId", connection))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@Id", SqlDbType.Int) { Value = Id });
+                connection.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        examen = new Examen
+                        {
+                            Id = (int)reader["idExamen"],
+                            Nombre = (string)reader["Nombre"],
+                            Descripcion = (string)reader["Descripcion"]
+                        };
+                    }
+                }
+                connection.Close();
+            }
+        }
+        return examen;
     }
 }

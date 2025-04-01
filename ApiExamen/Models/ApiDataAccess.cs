@@ -51,8 +51,15 @@ public class ApiDataAccess : IDataAccess
         return response.IsSuccessStatusCode;
     }
 
-    public void printInstance()
+    public Examen getById(int Id)
     {
-        System.Console.WriteLine("ApiDataAccess");
+        Examen? examen = new Examen();
+        var response = Task.Run(() => httpClient.GetAsync($"http://localhost:5199/api/exam/{Id}")).Result;
+        if (response.IsSuccessStatusCode)
+        {
+            var json = Task.Run(() => response.Content.ReadAsStringAsync()).Result;
+            examen = JsonSerializer.Deserialize<Examen>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }
+        return examen ?? new Examen();
     }
 }

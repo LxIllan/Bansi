@@ -34,8 +34,8 @@ public class ClsExamen
         return dataAccess.ConsultarExamen(Id, Nombre, Descripcion);
     }
 
-    public void PrintInstance()
+    public Examen getById(int Id)
     {
-        dataAccess.printInstance();
+        return dataAccess.getById(Id);
     }
 }

@@ -8,5 +8,5 @@ public interface IDataAccess
     bool ActualizarExamen(int Id, string Nombre, string Descripcion);
     bool EliminarExamen(int Id);
     List<Examen> ConsultarExamen(int Id, string Nombre, string Descripcion);
-    void printInstance();
+    Examen getById(int Id);
 }
