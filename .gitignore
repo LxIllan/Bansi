@@ -1,0 +1,8 @@
+.vs/
+.vscode/
+
+ApiExamen/obj*
+ApiExamen/bin*
+
+WsApiExamen/obj*
+WsApiExamen/bin*
